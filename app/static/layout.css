@@ -3,6 +3,12 @@
 .p0839 .board{grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr)}
 .p0839 #panel-table{grid-column:1/-1}.p0839 #panel-chart{grid-row:2}.p0839 #panel-issues{grid-row:2}
 .p0839 #panel-ledger{grid-row:3}.p0839 #panel-review{grid-row:3}
+.p0839 #panel-accrual{grid-column:1/-1;grid-row:4}
+.p0839 .accrual{display:flex;flex-direction:column;gap:var(--gap)}
+.p0839 .accrual-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--gap);align-items:end}
+.p0839 .accrual-form label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.p0839 .accrual-form input{padding:6px 8px;border:1px solid var(--line);border-radius:var(--radius)}
+.p0839 .accrual .review-actions{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
 .p0839 .toolbar{border-bottom:0;border-top:1px solid var(--line)}
 .p0839 .metric:nth-child(1),.p0839 .metric:nth-child(4){background:var(--accent);color:var(--surface)}
 .p0839 .metric:nth-child(1) span,.p0839 .metric:nth-child(4) span{color:inherit}

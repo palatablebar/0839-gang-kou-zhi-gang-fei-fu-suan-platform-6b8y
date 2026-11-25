@@ -39,6 +39,31 @@
         </div>
       </div>
     </article>
+    <article class="panel" id="panel-accrual">
+      <div class="panel-head"><h2>跨月暂估入账</h2><span class="hint">关账后旧账只读，差额计入本月</span></div>
+      <div class="accrual">
+        <div class="accrual-form">
+          <label>箱号 <input id="ac-container" placeholder="如 C1"></label>
+          <label>进港 <input id="ac-gate-in" type="date"></label>
+          <label>免堆工作日 <input id="ac-free-days" type="number" min="0"></label>
+          <label>历月 <input id="ac-period" placeholder="YYYY-MM"></label>
+          <label>出港（实结/对账时填） <input id="ac-gate-out" type="date"></label>
+          <div class="review-actions">
+            <button id="ac-accrue" type="button">月末暂估</button>
+            <button id="ac-settle" type="button">出港实结</button>
+            <button id="ac-close" type="button">关账</button>
+            <button id="ac-reconcile" type="button">对账</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>历月</th><th>箱号</th><th>类型</th><th>本次入账(分)</th><th>累计(分)</th><th>计费天数</th></tr></thead>
+            <tbody id="ac-body"><tr><td class="empty" colspan="6">暂无分录</td></tr></tbody>
+          </table>
+        </div>
+        <div class="ledger" id="ac-result"></div>
+      </div>
+    </article>
   </section>
 </main>
 {% endblock %}

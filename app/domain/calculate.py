@@ -1,13 +1,12 @@
-from datetime import date, timedelta
 from app.catalog import SPEC
+from app.domain.calendar import holidays_for
 from app.domain.helpers import *  # noqa: F401,F403
 
 
 def calculate_rows(items):
     out = []
-    rows = items
-    holidays = {date(2026, 10, d) for d in range(1, 8)} | {date(2026, 1, 1), date(2026, 1, 2), date(2026, 1, 3)}
     for item in items:
+        holidays = holidays_for(item["gate_in"])
         deadline = business_days_after(item["gate_in"], item["free_days"], holidays)
         charge_days = max(0, (item["gate_out"] - deadline).days)
         fee = tier_fee(charge_days)
